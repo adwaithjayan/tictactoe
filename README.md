@@ -65,5 +65,6 @@ Features a smart computer opponent, random starting turns, player score tracking
 ---
 
 ## 📄 License
+Licensed under the MIT License.  
+See the [LICENSE](./LICENSE) file for more details.
 
-MIT License.
