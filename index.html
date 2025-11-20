@@ -3,30 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="A neon-themed Tic Tac Toe game with smart AI, score tracking, and smooth animations."
+    />
+
+    <meta
+      property="og:url"
+      content="https://adwaithjayan.github.io/tictactoe/"
+    />
+    <meta
+      property="og:image"
+      content="https://adwaithjayan.github.io/tictactoe/assets/preview.png"
+    />
+
+    <meta property="og:image" content="/assets/favicon.ico" />
+    <meta property="og:image:type" content="image/x-icon" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+
+    <meta property="og:title" content="Tic Tac Toe — Smart AI Neon Edition" />
+    <meta
+      property="og:description"
+      content="Play Tic Tac Toe with smart AI, glowing animations, and score tracking."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://adwaithjayan.github.io/tictactoe/"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tic Tac Toe — Smart AI Neon Edition" />
+    <meta
+      name="twitter:description"
+      content="A neon-themed Tic Tac Toe game with smart AI."
+    />
+    <meta name="twitter:image" content="/assets/favicon.ico" />
+
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css" />
   </head>
- <body>
-        <h1>Tic Tac Toe</h1>
-        <hr>
-        <br>   
-        <h1 class="scr">
-          Current Score : <span  id="score"></span>
-        </h1> 
-        <div id="game-board">
-            <div data-cell-index="0" class="game-cell"></div>
-            <div data-cell-index="1" class="game-cell"></div>
-            <div data-cell-index="2" class="game-cell"></div>
-            <div data-cell-index="3" class="game-cell"></div>
-            <div data-cell-index="4" class="game-cell"></div>
-            <div data-cell-index="5" class="game-cell"></div>
-            <div data-cell-index="6" class="game-cell"></div>
-            <div data-cell-index="7" class="game-cell"></div>
-            <div data-cell-index="8" class="game-cell"></div>
-            <div id="wnnr"></div>
-        </div>
-        <button id="game-button"></button>
-        
-        <script src="script.js"></script>
-    </body>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <hr />
+    <br />
+    <h1 class="scr">Current Score : <span id="score"></span></h1>
+    <div id="game-board">
+      <div data-cell-index="0" class="game-cell"></div>
+      <div data-cell-index="1" class="game-cell"></div>
+      <div data-cell-index="2" class="game-cell"></div>
+      <div data-cell-index="3" class="game-cell"></div>
+      <div data-cell-index="4" class="game-cell"></div>
+      <div data-cell-index="5" class="game-cell"></div>
+      <div data-cell-index="6" class="game-cell"></div>
+      <div data-cell-index="7" class="game-cell"></div>
+      <div data-cell-index="8" class="game-cell"></div>
+      <div id="wnnr"></div>
+    </div>
+    <button id="game-button"></button>
+
+    <script src="script.js"></script>
+  </body>
 </html>

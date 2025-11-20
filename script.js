@@ -84,22 +84,36 @@ function checkWinner(symbol) {
       cond.forEach((idx) => gameCells[idx].classList.add("winning-game-cell"));
 
       gameOver = true;
-      wnnr.innerText = `${symbol} Wins!`;
-      wnnr.style.visibility = "visible";
-      wnnr.style.opacity = "1";
+
+      // Remove any previous animation classes
+      wnnr.classList.remove("win-glow", "lose-shake");
 
       if (symbol === playerSymbol) {
+        // Player wins
+        wnnr.innerText = "You Win!";
+        wnnr.classList.add("win-glow");
+
         score++;
         document.getElementById("score").innerText = score;
+
+      } else {
+        // Computer wins
+        wnnr.innerText = "You Lose!";
+        wnnr.classList.add("lose-shake");
       }
+
+      wnnr.style.visibility = "visible";
+      wnnr.style.opacity = "1";
 
       return true;
     }
   }
 
-  // Tie
+  // TIE
   if (!gameBoard.includes("") && !gameOver) {
     gameOver = true;
+
+    wnnr.classList.remove("win-glow", "lose-shake");
     wnnr.innerText = "Draw!";
     wnnr.style.visibility = "visible";
     wnnr.style.opacity = "1";
@@ -107,6 +121,8 @@ function checkWinner(symbol) {
 
   return false;
 }
+
+
 
 // ---------------------- COMPUTER AI --------------------------
 function computerMove() {
@@ -179,6 +195,8 @@ function findBestMove(symbol) {
 // ---------------------- START / RESTART -----------------------
 function startGame() {
   GameButton.innerText = "Restart Game";
+  wnnr.classList.remove("win-glow", "lose-shake");
+
 
   gameOver = false;
   gameBoard = ["", "", "", "", "", "", "", "", ""];

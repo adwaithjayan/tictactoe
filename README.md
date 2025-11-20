@@ -1,6 +1,9 @@
 # 🎮 Tic-Tac-Toe with Smart AI
 
 A lightweight, browser-based Tic-Tac-Toe game built using **HTML, CSS, and JavaScript**.
+
+
+A lightweight, browser-based Tic-Tac-Toe game built using **HTML, CSS, and JavaScript**.
 Features a smart computer opponent, random starting turns, player score tracking, and a clean, simple UI.
 
 ---
@@ -18,6 +21,13 @@ Features a smart computer opponent, random starting turns, player score tracking
 | 🔁 Start / Restart   | Start button for the first match, then works as a restart button         |
 
 ---
+
+## 📸 Screenshot
+
+<p align="center">
+  <img src="./assets/screenshot.png" width="600" alt="Game Screenshot"/>
+</p>
+
 
 ## 📁 Files
 

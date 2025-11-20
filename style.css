@@ -1,82 +1,170 @@
 body {
-    background-color: slategray;
-    background: url("./background.jpg") no-repeat center center fixed;
+    background: radial-gradient(circle at top, #001726, #000000);
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: #b9dfff;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
 
 }
-
+html{
+    overflow: hidden;
+}
 
 hr {
     width: 500px;
     height: 2px;
-    background-color: skyblue;
+    background: linear-gradient(90deg, #00c3ff, #ff00f7);
     border: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #game-board {
-	width: 450px;
-	height: 450px;
-	margin: 0 auto;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
 
-    background-color: skyblue;
-    color: white;
-    border: 6px solid lightblue;
-    border-radius: 10px;
-	
-	display: grid;
-	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    background: rgba(0, 0, 0, 0.2);
+    border: 4px solid rgba(0, 200, 255, 0.6);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 0 18px #00ccff88,
+                inset 0 0 15px #00ccff33;
+
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     position: relative;
 }
 
+
 .game-cell {
-    border: 6px solid lightblue;
-    border-radius: 2px;
+    border: 3px solid rgba(0, 200, 255, 0.5);
+    border-radius: 8px;
     font-size: 100px;
+    color: #00caff;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: 0.25s ease-in-out;
+}
+
+.game-cell:hover {
+    background: rgba(0, 200, 255, 0.15);
+    box-shadow: inset 0 0 15px #00eaff55;
 }
 
 .winning-game-cell {
-    background-color: white;
-    color: skyblue;
+    background: rgba(255, 255, 255, 0.9);
+    color: #00aaff;
+    animation: cellPulse 1.2s infinite ease-in-out alternate;
+    box-shadow: 0 0 18px #00ccff;
 }
+
+@keyframes cellPulse {
+    from { transform: scale(1); }
+    to   { transform: scale(1.08); }
+}
+
+
 
 #game-button {
-    height: 50px;
-    width: 150px;
-    border: 5px solid lightblue;
-    border-radius: 5px;
-    background-color: skyblue;
+    height: 55px;
+    width: 180px;
+
+    border: 3px solid #00caff;
+    border-radius: 8px;
+
+    background: rgba(0, 140, 255, 0.4);
+    backdrop-filter: blur(5px);
     color: white;
+
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
+
+    transition: 0.25s ease;
+    cursor: pointer;
 }
 
-#wnnr{
+#game-button:hover {
+    background: rgba(0, 200, 255, 0.8);
+    box-shadow: 0 0 15px #00eaffaa;
+}
+
+
+#wnnr {
     position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
-  font-weight: bolder;
-  padding: 20px 30px ;
-  border-radius:20px;
-  width: max-content;
-    background: url("./background.jpg") no-repeat center center fixed;
-    background-color: slategray;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 40px;
+    font-weight: bolder;
+
+    padding: 20px 35px;
+
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, 0.45);
+    border: 2px solid #00caffaa;
+    backdrop-filter: blur(10px);
+
+    color: #ffffff;
+    text-shadow: 0 0 10px #00caff;
+
+    box-shadow: 0 0 20px #00ccffaa;
+
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    z-index: 10;
 
+    transition: 0.4s ease-in-out;
+
+    z-index: 10;
 }
 
-.scr{
+.scr {
     text-align: center;
+    font-size: 22px;
+    color: #b9dfff;
+    margin-bottom: 30px;
+}
 
+.winning-game-cell:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 0 20px #00ccff !important;
+}
+
+
+.win-glow {
+    color: #00eaff;
+    text-shadow: 0 0 12px #00eaff,
+                 0 0 25px #00c3ff,
+                 0 0 40px #009dff;
+    animation: winPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes winPulse {
+    from { transform: translate(-50%, -50%) scale(1); }
+    to   { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+
+.lose-shake {
+    color: #ff3f3f;
+    text-shadow: 0 0 8px #ff4444;
+    animation: loseShake 0.15s infinite;
+}
+
+@keyframes loseShake {
+    0% { transform: translate(-50%, -50%) translate(1px, -1px); }
+    25% { transform: translate(-50%, -50%) translate(-1px, 2px); }
+    50% { transform: translate(-50%, -50%) translate(2px, 1px); }
+    75% { transform: translate(-50%, -50%) translate(-2px, -1px); }
+    100% { transform: translate(-50%, -50%) translate(1px, 1px); }
 }
