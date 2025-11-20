@@ -32,10 +32,16 @@ Features a smart computer opponent, random starting turns, player score tracking
 ## 📁 Files
 
 ```
-index.html
-style.css
-script.js
-background.jbackground.jpgpg
+
+/
+├── index.html
+├── style.css
+├── script.js
+├── LICENSE
+└── assets/
+    ├── favicon.ico
+    ├── preview.png
+    └── screenshot.png
 ```
 
 ---
